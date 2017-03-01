@@ -1,25 +1,35 @@
 'scopeName': 'source.siddhi'
 'name': 'Siddhi'
-'fileTypes': ['java']
+'fileTypes': ['siddhiql']
 
 'patterns': [
     {
-    'include': '#comments'
+      'include': '#comments'
+    }
+    {
+      'match': "(?i:\\b(STREAM|DEFINE|TABLE|FROM|PARTITION|WINDOW|SELECT|GROUP|BY|HAVING|INSERT|OVERWRITE|DELETE|UPDATE|RETURN|EVENTS|INTO|OUTPUT|EXPIRED|CURRENT|SNAPSHOT|FOR|RAW|OF|AS|OR|AND|ON|IS|NOT|WITHIN|WITH|BEGIN|END|NULL|EVERY|LAST|ALL|FIRST|JOIN|INNER|OUTER|RIGHT|LEFT|FULL|UNIDIRECTIONAL|YEARS|MONTHS|WEEKS|DAYS|HOURS|MINUTES|SECONDS|MILLISECONDS|FALSE|TRUE|STRING|INT|LONG|FLOAT|DOUBLE|BOOL|OBJECT)\\b)"
+      'name': 'siddhi.keyword'
+    }
+    {
+      'begin': "[\\\']"
+      'end': "[\\\']"
+      'beginCaptures':
+          '0':
+              'name': 'siddhi.string.quoted.single'
+      'endCaptures':
+          '0':
+              'name': 'siddhi.string.quoted.single'
+      'name': 'siddhi.string.quoted.single'
     }
     {
       'begin': "[\\\"]"
       'end': "[\\\"]"
       'beginCaptures':
           '0':
-              'name': 'punctuation.definition.string.begin'
+              'name': 'siddhi.string.quoted.double'
       'endCaptures':
           '0':
-              'name': 'punctuation.definition.string.end'
-      'patterns': [
-        {
-          'match': "(?i:\\b(STREAM|DEFINE|TABLE|FROM|PARTITION|WINDOW|SELECT|GROUP|BY|HAVING|INSERT|OVERWRITE|DELETE|UPDATE|RETURN|EVENTS|INTO|OUTPUT|EXPIRED|CURRENT|SNAPSHOT|FOR|RAW|OF|AS|OR|AND|ON|IS|NOT|WITHIN|WITH|BEGIN|END|NULL|EVERY|LAST|ALL|FIRST|JOIN|INNER|OUTER|RIGHT|LEFT|FULL|UNIDIRECTIONAL|YEARS|MONTHS|WEEKS|DAYS|HOURS|MINUTES|SECONDS|MILLISECONDS|FALSE|TRUE|STRING|INT|LONG|FLOAT|DOUBLE|BOOL|OBJECT)\\b)"
-          'name': 'keyword.siddhi'
-        }
-      ]
+              'name': 'siddhi.string.quoted.double'
+      'name': 'siddhi.string.quoted.double'
     }
 ]
