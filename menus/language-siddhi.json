@@ -1,0 +1,31 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Siddhi",
+        "submenu": [
+          {
+            "label": "Parse",
+            "command": "atom-siddhi-plugin:toggle"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Siddhi",
+          "submenu": [
+            {
+              "label": "Parse",
+              "command": "atom-siddhi-plugin:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
